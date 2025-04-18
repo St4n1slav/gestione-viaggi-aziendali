@@ -1,4 +1,4 @@
-package it.epicode.gestione_viaggi_aziendali.dipendenti;
+package it.epicode.gestione_viaggi_aziendali.data.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -19,4 +19,5 @@ public class Dipendente {
     private String cognome;
     private String email;
     private String username;
+    private byte[] img;
 }

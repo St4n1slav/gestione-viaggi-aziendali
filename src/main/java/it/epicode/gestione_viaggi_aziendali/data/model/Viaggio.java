@@ -1,11 +1,12 @@
-package it.epicode.gestione_viaggi_aziendali.viaggi;
+package it.epicode.gestione_viaggi_aziendali.data.model;
 
 
-import it.epicode.gestione_viaggi_aziendali.dipendenti.Dipendente;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
 
 @Data
 @Entity
@@ -18,8 +19,10 @@ public class Viaggio {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String destinazione;
-    private String data;
+    private LocalDate dataViaggio;
     @ManyToOne
     @JoinColumn(name = "dipendente_id")
     private Dipendente dipendente;
+    @Enumerated(EnumType.STRING)
+    private Stato stato;
 }

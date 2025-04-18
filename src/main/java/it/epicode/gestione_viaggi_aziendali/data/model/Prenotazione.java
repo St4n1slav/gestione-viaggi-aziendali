@@ -1,7 +1,6 @@
-package it.epicode.gestione_viaggi_aziendali.prenotazioni;
+package it.epicode.gestione_viaggi_aziendali.data.model;
 
 
-import it.epicode.gestione_viaggi_aziendali.viaggi.Viaggio;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,4 +24,6 @@ public class Prenotazione {
     @OneToOne
     @JoinColumn(name = "viaggio_id")
     private Viaggio viaggio;
+    @ManyToOne
+    private Dipendente dipendente;
 }
